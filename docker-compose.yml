@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  node_0:
+    hostname: node0
+    image: pubsub-node
+    networks:
+      my_network:
+        ipv4_address: 10.0.0.2
+  node_1:
+    hostname: node1
+    image: pubsub-node
+    networks:
+      my_network:
+        ipv4_address: 10.0.0.3
+  node_2:
+    hostname: node2
+    image: pubsub-node
+    networks:
+      my_network:
+        ipv4_address: 10.0.0.4
+  node_3:
+    hostname: node3
+    image: pubsub-node
+    networks:
+      my_network:
+        ipv4_address: 10.0.0.5
+  node_4:
+    hostname: node4
+    image: pubsub-node
+    networks:
+      my_network:
+        ipv4_address: 10.0.0.6
+  node_5:
+    hostname: node5
+    image: pubsub-node
+    networks:
+      my_network:
+        ipv4_address: 10.0.0.7
+
+networks:
+  my_network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.0.0.0/24
