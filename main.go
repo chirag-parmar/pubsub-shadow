@@ -198,5 +198,8 @@ func main() {
 
 	<-shutdown
 	log.Printf("Shutdown")
-
+	h.Close()
+	// wait for shadow to terminate the node
+	for {
+	}
 }
