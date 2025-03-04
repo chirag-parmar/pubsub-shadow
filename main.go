@@ -196,9 +196,11 @@ func main() {
 		}
 	}()
 
-	<-shutdown
-	log.Printf("Shutdown")
-	h.Close()
-	// wait for shadow to terminate the node
-	time.Sleep(10 * time.Minute)
+	select {
+	case <-shutdown:
+		log.Printf("Shutdown")
+		h.Close()
+		// wait for shadow to terminate the node
+		time.Sleep(10 * time.Minute)
+	}
 }
