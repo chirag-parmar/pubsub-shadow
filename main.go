@@ -200,6 +200,5 @@ func main() {
 	log.Printf("Shutdown")
 	h.Close()
 	// wait for shadow to terminate the node
-	for {
-	}
+	time.Sleep(10 * time.Minute)
 }
